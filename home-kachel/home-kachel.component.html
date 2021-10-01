@@ -1,0 +1,17 @@
+<div class="kachel" [id]="_id" tabindex="0">
+    <div class="header" (click)="OnCardClick(Click)" aria-label="Title" role="link">
+        <div class="icon">
+        </div>
+        <div class="title">{{Title}}</div>
+    </div>
+    <div class="content">
+        <div class="links" role="navigation">
+            <li *ngFor="let listItem of Aufgaben">
+                <p (click)=OnLinkClick(listItem.link)
+                    tabindex="1"
+                    aria-label="listItem.title"
+                    [id]="Click+'-'+listItem.link">{{listItem.title}}</p>
+            </li>   
+        </div>
+    </div>    
+</div>

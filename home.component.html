@@ -1,0 +1,20 @@
+<div class="container" *ngIf="show">
+    <div id="item" *ngFor="let aufgabe of aufgaben" >
+            <skums-nis-home-kachel
+            [id]="'home-kachel-'+aufgabe.link"
+            [Click]="aufgabe.link"
+            [Title]="aufgabe.displayName"
+            [Icon]="aufgabe.iconUrl"
+            [Aufgaben]="aufgabe.beschreibung">
+        </skums-nis-home-kachel>
+    </div>
+</div>
+<div class="container-nologin" *ngIf="!show">
+    <img src="assets/Kopfbild_Naturerlebnisse_Nowara.png" matTooltip="Weißstorch ©Adam Nowara">
+    <div class="overlay">
+        <h3>Bitte melden Sie sich an um das Naturschutzinformationssystem zu nutzen.</h3>
+        
+        <a class="btn" (click)="signIn()">Anmelden</a>
+    </div>
+</div>
+<br>
